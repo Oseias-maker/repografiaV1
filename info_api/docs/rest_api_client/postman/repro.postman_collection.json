@@ -1,0 +1,1114 @@
+{
+	"info": {
+		"_postman_id": "87e36006-116c-49e5-837b-11a96d31ca2c",
+		"name": "repro",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "USUARIO-ROUTES",
+			"item": [
+				{
+					"name": "ADMIN",
+					"item": [
+						{
+							"name": "Registrar (Inserir usuário)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "accessToken",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuaWYiOjAsIm5vbWUiOiJBRE1JTiBBQ0NPVU5UIiwiZW1haWwiOiJhZG1pbkBzZW5haXNwLmVkdS5iciIsImltYWdlbSI6InVwbG9hZHMvdXNlci1pbWcvZGVmYXVsdC91c3VhcmlvLnBuZyIsInJvbGVzIjpbIjNfUk9MRV9BRE1JTiJdLCJpYXQiOjE2MzUyMDQ4MzIsImV4cCI6MTYzNTI5MTIzMn0.GATMbUrgSNC1fCAqNj1OtptMoOu4oW78CpAnBKdBD54",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "nif",
+											"value": "5",
+											"type": "text"
+										},
+										{
+											"key": "senha",
+											"value": "123",
+											"type": "text"
+										},
+										{
+											"key": "nome",
+											"value": "Lucca",
+											"type": "text"
+										},
+										{
+											"key": "telefone",
+											"value": "11950743313",
+											"type": "text"
+										},
+										{
+											"key": "depto",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "mario-lucca@hotmail.com",
+											"type": "text"
+										},
+										{
+											"key": "cfp",
+											"value": "1234",
+											"type": "text"
+										},
+										{
+											"key": "admin",
+											"value": "0",
+											"description": "0 = não admin; 1 = admin",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/home/lucca/Pictures/wallpapers/E5VGHfxWUAAcaVS.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3002/registrar",
+									"host": [
+										"localhost"
+									],
+									"port": "3002",
+									"path": [
+										"registrar"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Auth",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accessToken",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuaWYiOjAsIm5vbWUiOiJBRE1JTiBBQ0NPVU5UIiwiZW1haWwiOiJhZG1pbkBzZW5haXNwLmVkdS5iciIsImltYWdlbSI6InVwbG9hZHMvdXNlci1pbWcvZGVmYXVsdC91c3VhcmlvLnBuZyIsInJvbGVzIjpbIjNfUk9MRV9BRE1JTiJdLCJpYXQiOjE2MzUyMDQ4MzIsImV4cCI6MTYzNTI5MTIzMn0.GATMbUrgSNC1fCAqNj1OtptMoOu4oW78CpAnBKdBD54",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:3002/auth",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3002",
+									"path": [
+										"auth"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Usuarios (Solicitando todos os usuários)",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accessToken",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuaWYiOjAsIm5vbWUiOiJBRE1JTiBBQ0NPVU5UIiwiZW1haWwiOiJhZG1pbkBzZW5haXNwLmVkdS5iciIsImltYWdlbSI6InVwbG9hZHMvdXNlci1pbWcvZGVmYXVsdC91c3VhcmlvLnBuZyIsInJvbGVzIjpbIjNfUk9MRV9BRE1JTiJdLCJpYXQiOjE2MzUyMDQ4MzIsImV4cCI6MTYzNTI5MTIzMn0.GATMbUrgSNC1fCAqNj1OtptMoOu4oW78CpAnBKdBD54",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:3002/usuarios",
+									"host": [
+										"localhost"
+									],
+									"port": "3002",
+									"path": [
+										"usuarios"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Usuario/:nome (Solicitando usuario por nome)",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accessToken",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuaWYiOjAsIm5vbWUiOiJBRE1JTiBBQ0NPVU5UIiwiZW1haWwiOiJhZG1pbkBzZW5haXNwLmVkdS5iciIsImltYWdlbSI6InVwbG9hZHMvdXNlci1pbWcvZGVmYXVsdC91c3VhcmlvLnBuZyIsInJvbGVzIjpbIjNfUk9MRV9BRE1JTiJdLCJpYXQiOjE2MzUyMDQ4MzIsImV4cCI6MTYzNTI5MTIzMn0.GATMbUrgSNC1fCAqNj1OtptMoOu4oW78CpAnBKdBD54",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:3002/usuario/:nome",
+									"host": [
+										"localhost"
+									],
+									"port": "3002",
+									"path": [
+										"usuario",
+										":nome"
+									],
+									"variable": [
+										{
+											"key": "nome",
+											"value": "Lucca"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Usuario/nif/:nif (Solicitando usuario por nif)",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accessToken",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuaWYiOjAsIm5vbWUiOiJBRE1JTiBBQ0NPVU5UIiwiZW1haWwiOiJhZG1pbkBzZW5haXNwLmVkdS5iciIsImltYWdlbSI6InVwbG9hZHMvdXNlci1pbWcvZGVmYXVsdC91c3VhcmlvLnBuZyIsInJvbGVzIjpbIjNfUk9MRV9BRE1JTiJdLCJpYXQiOjE2MzUyMDQ4MzIsImV4cCI6MTYzNTI5MTIzMn0.GATMbUrgSNC1fCAqNj1OtptMoOu4oW78CpAnBKdBD54",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:3002/usuario/nif/:nif",
+									"host": [
+										"localhost"
+									],
+									"port": "3002",
+									"path": [
+										"usuario",
+										"nif",
+										":nif"
+									],
+									"variable": [
+										{
+											"key": "nif",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Usuario/:nif (Atualizar Usuário por nif - gerente)",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "accessToken",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuaWYiOjAsIm5vbWUiOiJBRE1JTiBBQ0NPVU5UIiwiZW1haWwiOiJhZG1pbkBzZW5haXNwLmVkdS5iciIsImltYWdlbSI6InVwbG9hZHMvdXNlci1pbWcvZGVmYXVsdC91c3VhcmlvLnBuZyIsInJvbGVzIjpbIjNfUk9MRV9BRE1JTiJdLCJpYXQiOjE2MzUyMDQ4MzIsImV4cCI6MTYzNTI5MTIzMn0.GATMbUrgSNC1fCAqNj1OtptMoOu4oW78CpAnBKdBD54",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "imagem",
+											"type": "file",
+											"src": "/C:/Users/ADMIN/Downloads/tumblr_p21jnxOcWN1ww2islo1_1280 (1).jpg"
+										},
+										{
+											"key": "nif",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "senha",
+											"value": "123",
+											"type": "text"
+										},
+										{
+											"key": "nome",
+											"value": "Lucca",
+											"type": "text"
+										},
+										{
+											"key": "telefone",
+											"value": "11950743313",
+											"type": "text"
+										},
+										{
+											"key": "depto",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "cfp",
+											"value": "657",
+											"type": "text"
+										},
+										{
+											"key": "admin",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "mario-lucca@hotmail.com",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3002/usuario/:nif",
+									"host": [
+										"localhost"
+									],
+									"port": "3002",
+									"path": [
+										"usuario",
+										":nif"
+									],
+									"variable": [
+										{
+											"key": "nif",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Usuario/:nif (Deletando Usuario por nif - gerente)",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "accessToken",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuaWYiOjAsIm5vbWUiOiJBRE1JTiBBQ0NPVU5UIiwiZW1haWwiOiJhZG1pbkBzZW5haXNwLmVkdS5iciIsImltYWdlbSI6InVwbG9hZHMvdXNlci1pbWcvZGVmYXVsdC91c3VhcmlvLnBuZyIsInJvbGVzIjpbIjNfUk9MRV9BRE1JTiJdLCJpYXQiOjE2MzUyMDQ4MzIsImV4cCI6MTYzNTI5MTIzMn0.GATMbUrgSNC1fCAqNj1OtptMoOu4oW78CpAnBKdBD54",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "http://localhost:3002/usuario/:nif",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3002",
+									"path": [
+										"usuario",
+										":nif"
+									],
+									"variable": [
+										{
+											"key": "nif",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"auth": {
+						"type": "bearer"
+					},
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "USER",
+					"item": [
+						{
+							"name": "Logar",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "emailOrNif",
+											"value": "admin@senaisp.edu.br",
+											"type": "text"
+										},
+										{
+											"key": "senha",
+											"value": "admin",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3002/logar",
+									"host": [
+										"localhost"
+									],
+									"port": "3002",
+									"path": [
+										"logar"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "MeuUsuario (solicitando infos do usuario logado)",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accessToken",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuaWYiOjAsIm5vbWUiOiJBRE1JTiBBQ0NPVU5UIiwiZW1haWwiOiJhZG1pbkBzZW5haXNwLmVkdS5iciIsImltYWdlbSI6InVwbG9hZHMvdXNlci1pbWcvZGVmYXVsdC91c3VhcmlvLnBuZyIsInJvbGVzIjpbIjNfUk9MRV9BRE1JTiJdLCJpYXQiOjE2MzUyMDQ4MzIsImV4cCI6MTYzNTI5MTIzMn0.GATMbUrgSNC1fCAqNj1OtptMoOu4oW78CpAnBKdBD54",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:3002/meuUsuario",
+									"host": [
+										"localhost"
+									],
+									"port": "3002",
+									"path": [
+										"meuUsuario"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "MeuUsuario (Atualizar Usuário - usuário logado)",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "accessToken",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuaWYiOjAsIm5vbWUiOiJBRE1JTiBBQ0NPVU5UIiwiZW1haWwiOiJhZG1pbkBzZW5haXNwLmVkdS5iciIsImltYWdlbSI6InVwbG9hZHMvdXNlci1pbWcvZGVmYXVsdC91c3VhcmlvLnBuZyIsInJvbGVzIjpbIjNfUk9MRV9BRE1JTiJdLCJpYXQiOjE2MzUyMDQ4MzIsImV4cCI6MTYzNTI5MTIzMn0.GATMbUrgSNC1fCAqNj1OtptMoOu4oW78CpAnBKdBD54",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "imagem",
+											"type": "file",
+											"src": "/C:/Users/ADMIN/Downloads/d9f61500ad2e6d3a493b7012bfd44e92.jpg"
+										},
+										{
+											"key": "nome",
+											"value": "Admin",
+											"type": "text"
+										},
+										{
+											"key": "telefone",
+											"value": "11950743313",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "example@gmail.com",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3002/meuUsuario",
+									"host": [
+										"localhost"
+									],
+									"port": "3002",
+									"path": [
+										"meuUsuario"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "MudarSenha (Mudando senha - usuario logado)",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "accessToken",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuaWYiOjAsIm5vbWUiOiJBRE1JTiBBQ0NPVU5UIiwiZW1haWwiOiJhZG1pbkBzZW5haXNwLmVkdS5iciIsImltYWdlbSI6InVwbG9hZHMvdXNlci1pbWcvZGVmYXVsdC91c3VhcmlvLnBuZyIsInJvbGVzIjpbIjNfUk9MRV9BRE1JTiJdLCJpYXQiOjE2MzUyMDQ4MzIsImV4cCI6MTYzNTI5MTIzMn0.GATMbUrgSNC1fCAqNj1OtptMoOu4oW78CpAnBKdBD54",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "senhaAntiga",
+											"value": "admin",
+											"type": "text"
+										},
+										{
+											"key": "senhaNova",
+											"value": "123",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3002/mudarSenha",
+									"host": [
+										"localhost"
+									],
+									"port": "3002",
+									"path": [
+										"mudarSenha"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "MeuUsuario (Deletando Usuario - usuario logado)",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "accessToken",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuaWYiOjAsIm5vbWUiOiJBRE1JTiBBQ0NPVU5UIiwiZW1haWwiOiJhZG1pbkBzZW5haXNwLmVkdS5iciIsImltYWdlbSI6InVwbG9hZHMvdXNlci1pbWcvZGVmYXVsdC91c3VhcmlvLnBuZyIsInJvbGVzIjpbIjNfUk9MRV9BRE1JTiJdLCJpYXQiOjE2MzUyMDQ4MzIsImV4cCI6MTYzNTI5MTIzMn0.GATMbUrgSNC1fCAqNj1OtptMoOu4oW78CpAnBKdBD54",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "http://localhost:3002/meuUsuario",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3002",
+									"path": [
+										"meuUsuario"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "PEDIDO-ROUTES",
+			"item": [
+				{
+					"name": "ADMIN",
+					"item": [
+						{
+							"name": "Pedidos (solicitando todos os pedidos - gerente)",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accessToken",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuaWYiOjAsIm5vbWUiOiJBRE1JTiBBQ0NPVU5UIiwiZW1haWwiOiJhZG1pbkBzZW5haXNwLmVkdS5iciIsImltYWdlbSI6InVwbG9hZHMvdXNlci1pbWcvZGVmYXVsdC91c3VhcmlvLnBuZyIsInJvbGVzIjpbIjNfUk9MRV9BRE1JTiJdLCJpYXQiOjE2MzUyMDQ4MzIsImV4cCI6MTYzNTI5MTIzMn0.GATMbUrgSNC1fCAqNj1OtptMoOu4oW78CpAnBKdBD54",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "localhost:3002/pedidos",
+									"host": [
+										"localhost"
+									],
+									"port": "3002",
+									"path": [
+										"pedidos"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Pedido/:id (solicitando pedido pelo id do pedido)",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accessToken",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuaWYiOjAsIm5vbWUiOiJBRE1JTiBBQ0NPVU5UIiwiZW1haWwiOiJhZG1pbkBzZW5haXNwLmVkdS5iciIsImltYWdlbSI6InVwbG9hZHMvdXNlci1pbWcvZGVmYXVsdC91c3VhcmlvLnBuZyIsInJvbGVzIjpbIjNfUk9MRV9BRE1JTiJdLCJpYXQiOjE2MzUyMDQ4MzIsImV4cCI6MTYzNTI5MTIzMn0.GATMbUrgSNC1fCAqNj1OtptMoOu4oW78CpAnBKdBD54",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:3002/pedido/:id",
+									"host": [
+										"localhost"
+									],
+									"port": "3002",
+									"path": [
+										"pedido",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Pedido/titulo/:pedido (solicitando pedido pelo titulo do pedido)",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accessToken",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuaWYiOjAsIm5vbWUiOiJBRE1JTiBBQ0NPVU5UIiwiZW1haWwiOiJhZG1pbkBzZW5haXNwLmVkdS5iciIsImltYWdlbSI6InVwbG9hZHMvdXNlci1pbWcvZGVmYXVsdC91c3VhcmlvLnBuZyIsInJvbGVzIjpbIjNfUk9MRV9BRE1JTiJdLCJpYXQiOjE2MzUyMDQ4MzIsImV4cCI6MTYzNTI5MTIzMn0.GATMbUrgSNC1fCAqNj1OtptMoOu4oW78CpAnBKdBD54",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:3002/pedido/titulo/:pedido",
+									"host": [
+										"localhost"
+									],
+									"port": "3002",
+									"path": [
+										"pedido",
+										"titulo",
+										":pedido"
+									],
+									"variable": [
+										{
+											"key": "pedido",
+											"value": "Livro"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Pedido/detalheid/:id (solicitando pedido pelo id do detalhe do pedido)",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accessToken",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuaWYiOjAsIm5vbWUiOiJBRE1JTiBBQ0NPVU5UIiwiZW1haWwiOiJhZG1pbkBzZW5haXNwLmVkdS5iciIsImltYWdlbSI6InVwbG9hZHMvdXNlci1pbWcvZGVmYXVsdC91c3VhcmlvLnBuZyIsInJvbGVzIjpbIjNfUk9MRV9BRE1JTiJdLCJpYXQiOjE2MzUyMDQ4MzIsImV4cCI6MTYzNTI5MTIzMn0.GATMbUrgSNC1fCAqNj1OtptMoOu4oW78CpAnBKdBD54",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:3002/pedido/detalheid/:id",
+									"host": [
+										"localhost"
+									],
+									"port": "3002",
+									"path": [
+										"pedido",
+										"detalheid",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Pedido/:nif (solicitando pedido por NIF do usuário que fez aquele pedido)",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accessToken",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuaWYiOjAsIm5vbWUiOiJBRE1JTiBBQ0NPVU5UIiwiZW1haWwiOiJhZG1pbkBzZW5haXNwLmVkdS5iciIsImltYWdlbSI6InVwbG9hZHMvdXNlci1pbWcvZGVmYXVsdC91c3VhcmlvLnBuZyIsInJvbGVzIjpbIjNfUk9MRV9BRE1JTiJdLCJpYXQiOjE2MzUyMDQ4MzIsImV4cCI6MTYzNTI5MTIzMn0.GATMbUrgSNC1fCAqNj1OtptMoOu4oW78CpAnBKdBD54",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:3002/pedido/nif/:nif",
+									"host": [
+										"localhost"
+									],
+									"port": "3002",
+									"path": [
+										"pedido",
+										"nif",
+										":nif"
+									],
+									"variable": [
+										{
+											"key": "nif",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "USER",
+					"item": [
+						{
+							"name": "Inserindo um pedido",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "accessToken",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuaWYiOjAsIm5vbWUiOiJBRE1JTiBBQ0NPVU5UIiwiZW1haWwiOiJhZG1pbkBzZW5haXNwLmVkdS5iciIsImltYWdlbSI6InVwbG9hZHMvdXNlci1pbWcvZGVmYXVsdC91c3VhcmlvLnBuZyIsInJvbGVzIjpbIjNfUk9MRV9BRE1JTiJdLCJpYXQiOjE2MzUyMDM0NTUsImV4cCI6MTYzNTI4OTg1NX0.K4vNdB1qKT4-KafmaNIwKwJqrJL4I7JJ2YPpVz4Hkhk",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "centro_custos",
+											"value": "3",
+											"type": "text"
+										},
+										{
+											"key": "titulo_pedido",
+											"value": "Livro XYZ",
+											"type": "text"
+										},
+										{
+											"key": "modo_envio",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "curso",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "observacoes",
+											"value": "Nenhuma",
+											"type": "text"
+										},
+										{
+											"key": "num_copias",
+											"value": "50",
+											"type": "text"
+										},
+										{
+											"key": "num_paginas",
+											"value": "5",
+											"type": "text"
+										},
+										{
+											"key": "acabamento",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "tamanho_pagina",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "tipos_capa",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "tipos_copia",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/C:/Users/ADMIN/Downloads/sequelize_relacionamento.pdf"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3002/pedido",
+									"host": [
+										"localhost"
+									],
+									"port": "3002",
+									"path": [
+										"pedido"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Atualizar avaliação",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "accessToken",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuaWYiOjAsIm5vbWUiOiJBRE1JTiBBQ0NPVU5UIiwiZW1haWwiOiJhZG1pbkBzZW5haXNwLmVkdS5iciIsImltYWdlbSI6InVwbG9hZHMvdXNlci1pbWcvZGVmYXVsdC91c3VhcmlvLnBuZyIsInJvbGVzIjpbIjNfUk9MRV9BRE1JTiJdLCJpYXQiOjE2MzUyMDM0NTUsImV4cCI6MTYzNTI4OTg1NX0.K4vNdB1qKT4-KafmaNIwKwJqrJL4I7JJ2YPpVz4Hkhk",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "id_avaliacao_pedido",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "avaliacao_obs",
+											"value": "Reclamaçao y",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3002/avaliacao/:id",
+									"host": [
+										"localhost"
+									],
+									"port": "3002",
+									"path": [
+										"avaliacao",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "DET-PEDIDO-ROUTES",
+			"item": [
+				{
+					"name": "USER",
+					"item": [
+						{
+							"name": "DetPedido/:id (solicitando detalhes do pedido por id do pedido)",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accessToken",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuaWYiOjAsIm5vbWUiOiJBRE1JTiBBQ0NPVU5UIiwiZW1haWwiOiJhZG1pbkBzZW5haXNwLmVkdS5iciIsImltYWdlbSI6InVwbG9hZHMvdXNlci1pbWcvZGVmYXVsdC91c3VhcmlvLnBuZyIsInJvbGVzIjpbIjNfUk9MRV9BRE1JTiJdLCJpYXQiOjE2MzUyMDQ4MzIsImV4cCI6MTYzNTI5MTIzMn0.GATMbUrgSNC1fCAqNj1OtptMoOu4oW78CpAnBKdBD54",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:3002/detPedido/:id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3002",
+									"path": [
+										"detPedido",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "RESET-TOKEN-ROUTES",
+			"item": [
+				{
+					"name": "USER",
+					"item": [
+						{
+							"name": "Esqueci a senha",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "mail",
+											"value": "mario-lucca@hotmail.com",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3002/esqueceuSenha",
+									"host": [
+										"localhost"
+									],
+									"port": "3002",
+									"path": [
+										"esqueceuSenha"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Resetar Senha",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "email",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "token",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "senha",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "senha2",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:3002/resetarSenha",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3002",
+									"path": [
+										"resetarSenha"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "SERVICO-ROUTES",
+			"item": [
+				{
+					"name": "ADMIN",
+					"item": [
+						{
+							"name": "Servicos (solicitando todos os serviços - gerente)",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accessToken",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuaWYiOjAsIm5vbWUiOiJBRE1JTiBBQ0NPVU5UIiwiZW1haWwiOiJhZG1pbkBzZW5haXNwLmVkdS5iciIsImltYWdlbSI6InVwbG9hZHMvdXNlci1pbWcvZGVmYXVsdC91c3VhcmlvLnBuZyIsInJvbGVzIjpbIjNfUk9MRV9BRE1JTiJdLCJpYXQiOjE2MzUyMDQ4MzIsImV4cCI6MTYzNTI5MTIzMn0.GATMbUrgSNC1fCAqNj1OtptMoOu4oW78CpAnBKdBD54",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:3002/servicos",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3002",
+									"path": [
+										"servicos"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Servicos/:id (Alterando quantidade e valor unitário do serviço - gerente)",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "accessToken",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuaWYiOjAsIm5vbWUiOiJBRE1JTiBBQ0NPVU5UIiwiZW1haWwiOiJhZG1pbkBzZW5haXNwLmVkdS5iciIsImltYWdlbSI6InVwbG9hZHMvdXNlci1pbWcvZGVmYXVsdC91c3VhcmlvLnBuZyIsInJvbGVzIjpbIjNfUk9MRV9BRE1JTiJdLCJpYXQiOjE2MzUyMDQ4MzIsImV4cCI6MTYzNTI5MTIzMn0.GATMbUrgSNC1fCAqNj1OtptMoOu4oW78CpAnBKdBD54",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "quantidade",
+											"value": "4134314",
+											"type": "text"
+										},
+										{
+											"key": "valor_unitario",
+											"value": "3",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:3002/servicos/:id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3002",
+									"path": [
+										"servicos",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "ESTATISTICAS-ROUTES",
+			"item": [
+				{
+					"name": "ADMIN",
+					"item": [
+						{
+							"name": "Estatisticas Mensais/:ano/:mes (solicitando estatisticas mensais passando ano e mês como parâmetro)",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accessToken",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuaWYiOjAsIm5vbWUiOiJBRE1JTiBBQ0NPVU5UIiwiZW1haWwiOiJhZG1pbkBzZW5haXNwLmVkdS5iciIsImltYWdlbSI6InVwbG9hZHMvdXNlci1pbWcvZGVmYXVsdC91c3VhcmlvLnBuZyIsInJvbGVzIjpbIjNfUk9MRV9BRE1JTiJdLCJpYXQiOjE2MzUyMDQ4MzIsImV4cCI6MTYzNTI5MTIzMn0.GATMbUrgSNC1fCAqNj1OtptMoOu4oW78CpAnBKdBD54",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:3002/estatisticas/mensais/:ano/:mes",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3002",
+									"path": [
+										"estatisticas",
+										"mensais",
+										":ano",
+										":mes"
+									],
+									"variable": [
+										{
+											"key": "ano",
+											"value": "2021"
+										},
+										{
+											"key": "mes",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Estatisticas Quatro Meses (solicitando as estatisticas dos ultimos 3 meses + mês atual)",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accessToken",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuaWYiOjAsIm5vbWUiOiJBRE1JTiBBQ0NPVU5UIiwiZW1haWwiOiJhZG1pbkBzZW5haXNwLmVkdS5iciIsImltYWdlbSI6InVwbG9hZHMvdXNlci1pbWcvZGVmYXVsdC91c3VhcmlvLnBuZyIsInJvbGVzIjpbIjNfUk9MRV9BRE1JTiJdLCJpYXQiOjE2MzUyMDQ4MzIsImV4cCI6MTYzNTI5MTIzMn0.GATMbUrgSNC1fCAqNj1OtptMoOu4oW78CpAnBKdBD54",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:3002/estatisticas/quatroMeses",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3002",
+									"path": [
+										"estatisticas",
+										"quatroMeses"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
